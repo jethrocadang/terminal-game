@@ -5,7 +5,7 @@ import os
 gw = False
 
 def cls():
-    os.system('cls')
+    os.system('clear')
 #Check vertical 4 in a row.
 def check_ver():
     for row in range(6):
