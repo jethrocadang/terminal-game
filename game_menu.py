@@ -26,8 +26,8 @@ def homepage():
             stacked
         elif ch == 3:
             cls()
-            import queue
-            queue
+            import linked_list
+            linked_list
         elif ch == 4:
             cls()
             import authentication

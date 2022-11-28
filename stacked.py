@@ -94,26 +94,21 @@ while True:
         p()
         row = int(input("X, column: "))
         row -= 1
-        if row.isdigit():
-            if 0 > row or row > 6:
-                continue
-            else:
-                for x in range(4, -1, -1):
-                    if grid[x][row] == '.':
-                        grid[x][row] = 'X'
-                        break
+        if 0 > row or row > 6:
+            continue
         else:
-            print('type a number')
+            for x in range(4, -1, -1):
+                if grid[x][row] == '.':
+                    grid[x][row] = 'X'
+                    break
         p()
         row = int(input("O, column: "))
+        
         row -= 1
-        if row.isdigit():
-            if 0 > row or row > 6:
-                continue
-            else:
-                for x in range(4, -1, -1):
-                    if grid[x][row] == '.':
-                        grid[x][row] = 'O'
-                        break
+        if 0 > row or row > 6:
+            continue
         else:
-            print('Type 1-9 only')
+            for x in range(4, -1, -1):
+                if grid[x][row] == '.':
+                    grid[x][row] = 'O'
+                    break
