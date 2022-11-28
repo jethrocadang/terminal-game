@@ -8,10 +8,16 @@ main_menu_input = ''
 
 def main():
     clear()
-    print('[1] Register')
-    print('[2] Login')
-    print('[3] Logout')
-    print('[4] Reset Password')
+    print("------------------------------")
+    print('------------------------------')
+    print('|  Terminal Games Collection |')
+    print("------------------------------")
+    print('|     [1] Register           |')
+    print('|     [2] Login              |')
+    print('|     [3] Logout             |')
+    print('|     [4] Reset Password     |')
+    print('------------------------------')
+    print('------------------------------')
     global main_menu_input
     main_menu_input = input('Choice: ')
     is_exit = False
@@ -57,7 +63,12 @@ def login():
                     is_success = True
         
         if is_success:
+            clear()
             print('Login Success')
+            clear()
+            time.sleep(5)
+            import game_menu
+            game_menu
         else:
             print('Login Failed')
         global is_exit
@@ -97,7 +108,7 @@ def reset_password():
                 writer = csv.writer(csv_file)
                 for i in range(len(new_list)):
                     writer.writerow(new_list[i])
-            time.sleep(20)
+            # time.sleep(20)
         else:
             print('Login Failed')
         global is_exit

@@ -1,6 +1,7 @@
 
 
 import os
+import time
 
 gw = False
 
@@ -60,13 +61,22 @@ def ow():
     em()
     print("O, Wins!".center(16))
     em()
+    print('Back to Home')
+    import game_menu
+    game_menu
     gw = True
+
 #Victory message and stuff for X
 def xw():
     cls()
     em()
     print("X, Wins!".center(16))
     em()
+    print('Back to Home')
+    cls()
+    time.sleep(10)
+    import game_menu
+    game_menu
     gw = True
 #Grid system
 grid = [['.', '.', '.', '.', '.', '.'],
@@ -84,20 +94,26 @@ while True:
         p()
         row = int(input("X, column: "))
         row -= 1
-        if 0 > row or row > 6:
-            continue
+        if row.isdigit():
+            if 0 > row or row > 6:
+                continue
+            else:
+                for x in range(4, -1, -1):
+                    if grid[x][row] == '.':
+                        grid[x][row] = 'X'
+                        break
         else:
-            for x in range(4, -1, -1):
-                if grid[x][row] == '.':
-                    grid[x][row] = 'X'
-                    break
+            print('type a number')
         p()
         row = int(input("O, column: "))
         row -= 1
-        if 0 > row or row > 6:
-            continue
+        if row.isdigit():
+            if 0 > row or row > 6:
+                continue
+            else:
+                for x in range(4, -1, -1):
+                    if grid[x][row] == '.':
+                        grid[x][row] = 'O'
+                        break
         else:
-            for x in range(4, -1, -1):
-                if grid[x][row] == '.':
-                    grid[x][row] = 'O'
-                    break
+            print('Type 1-9 only')

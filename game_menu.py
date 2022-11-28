@@ -30,8 +30,8 @@ def homepage():
             queue
         elif ch == 4:
             cls()
-            import auth
-            auth
+            import authentication
+            authentication
         else:
             print("Wrong Choice!")
             
