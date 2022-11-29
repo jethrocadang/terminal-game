@@ -61,9 +61,9 @@ def ow():
     em()
     print("O, Wins!".center(16))
     em()
-    print('Back to Home')
-    import game_menu
-    game_menu
+    # print('Back to Home')
+    # import game_menu
+    # game_menu
     gw = True
 
 #Victory message and stuff for X
@@ -74,9 +74,9 @@ def xw():
     em()
     print('Back to Home')
     cls()
-    time.sleep(10)
-    import game_menu
-    game_menu
+    # time.sleep(3)
+    # import game_menu
+    # game_menu
     gw = True
 #Grid system
 grid = [['.', '.', '.', '.', '.', '.'],
@@ -92,8 +92,15 @@ while True:
         break
     else:
         p()
-        row = int(input("X, column: "))
-        row -= 1
+        try:
+            row = int(input("X, column: "))
+            row -= 1
+        except ValueError:
+            em()
+            print('Wrong Input!! Enter number 1 to 6 only')
+            time.sleep(3)
+            continue
+        
         if 0 > row or row > 6:
             continue
         else:
@@ -102,9 +109,14 @@ while True:
                     grid[x][row] = 'X'
                     break
         p()
-        row = int(input("O, column: "))
-        
-        row -= 1
+        try:
+            row = int(input("O, column: "))
+            row -= 1
+        except ValueError:
+            em()
+            print('Wrong Input!! Enter number 1 to 6 only')
+            time.sleep(3)
+            continue
         if 0 > row or row > 6:
             continue
         else:

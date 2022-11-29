@@ -1,6 +1,9 @@
 import curses 
 from random import randint
+import os
 
+def clear():
+    os.system('clear')
 
 #constants
 
@@ -84,6 +87,10 @@ while key != ESC:
     win.addch(snake[0][0], snake[0][1], 'o')
 
 curses.endwin()
-print(f"Final score = {score}")
+# print(f"Final score = {score}")
 
 print("back to home")
+
+clear()
+import game_menu
+game_menu

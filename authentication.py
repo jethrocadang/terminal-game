@@ -22,6 +22,10 @@ def main():
     main_menu_input = input('Choice: ')
     is_exit = False
 
+    
+
+    print('yay!! you gave the correct value as int')
+
     while is_exit == False:
         if main_menu_input == '1':
             clear()
@@ -45,10 +49,16 @@ def register():
     print('Registration Form')
     username = input('Enter your username: ')
     password = pwinput.pwinput(prompt='Enter your password: ', mask='*')
-    with open('database.csv', 'a') as csv_file:
-        writer = csv.writer(csv_file)
-        writer.writerow([username, password])
-    return True
+    confirm_pwd = pwinput.pwinput(prompt='Confirm password', mask='*')
+    if password == confirm_pwd:
+        with open('database.csv', 'a') as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerow([username, password])
+        return True
+    else:
+        clear()
+        print('Password not match')
+        register()
 
 def login():
     print('Login Form')
@@ -75,7 +85,7 @@ def login():
         global main_menu_input
         is_exit = True
         main_menu_input = ''
-        # time.sleep(10)
+        time.sleep(10)
 
 def logout():
     return True
