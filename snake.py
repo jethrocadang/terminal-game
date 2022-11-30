@@ -87,10 +87,14 @@ while key != ESC:
     win.addch(snake[0][0], snake[0][1], 'o')
 
 curses.endwin()
-# print(f"Final score = {score}")
 
-print("back to home")
+from snake_menu import snake_main
+snake_main()
 
-clear()
-import game_menu
-game_menu
+
+
+
+
+
+
+    

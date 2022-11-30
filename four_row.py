@@ -6,7 +6,7 @@ import time
 gw = False
 
 def cls():
-    os.system('clear')
+    os.system('clear||cls')
 #Check vertical 4 in a row.
 def check_ver():
     for row in range(6):
@@ -57,26 +57,28 @@ def em():
         print("")
 #Victory message and stuff for O
 def ow():
-    cls()
+    
     em()
     print("O, Wins!".center(16))
     em()
-    # print('Back to Home')
-    # import game_menu
-    # game_menu
+    print('Back to Home')
+    from four_row_menu import four_row_main
+    four_row_main()
+    cls()
     gw = True
 
 #Victory message and stuff for X
 def xw():
-    cls()
+    
     em()
     print("X, Wins!".center(16))
     em()
     print('Back to Home')
+    
+    time.sleep(3)
+    from four_row_menu import four_row_main
+    four_row_main()
     cls()
-    # time.sleep(3)
-    # import game_menu
-    # game_menu
     gw = True
 #Grid system
 grid = [['.', '.', '.', '.', '.', '.'],

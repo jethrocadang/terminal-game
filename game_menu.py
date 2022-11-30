@@ -1,6 +1,8 @@
 import os
+import time
 
 def homepage():
+    clear()
     print("-----------------------")
     print("|      Game Menu      |")
     print("-----------------------")
@@ -15,29 +17,31 @@ def homepage():
     
     while 1:
 
-        ch = int(input("Enter your choice: "))
-        if ch == 1:
-          cls()
-          import queue
-          queue
-        elif ch == 2:
-            cls()
-            import stacked
-            stacked
-        elif ch == 3:
-            cls()
-            import linked_list
-            linked_list
-        elif ch == 4:
-            cls()
+        ch = input("Enter your choice: ")
+        if ch == '1':
+          clear()
+          from snake_menu import snake_main
+          snake_main()
+        elif ch == '2':
+            clear()
+            import four_row
+            four_row   
+        elif ch == '3':
+            clear()
+            from suduko import thisgame
+            thisgame()
+        elif ch == '4':
+            clear()
             import authentication
             authentication
         else:
             print("Wrong Choice!")
+            time.sleep(3)
+            clear()
             
-            return homepage
+            return homepage()
 
-def cls():
+def clear():
         os.system('clear')
 
     

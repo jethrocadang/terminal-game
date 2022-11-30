@@ -6,6 +6,10 @@ import time
 is_exit = False
 main_menu_input = ''
 
+def em():
+    for x in range(3):
+        print("")
+
 def main():
     clear()
     print("------------------------------")
@@ -18,14 +22,13 @@ def main():
     print('|     [4] Reset Password     |')
     print('------------------------------')
     print('------------------------------')
+
     global main_menu_input
-    main_menu_input = input('Choice: ')
-    is_exit = False
-
     
-
-    print('yay!! you gave the correct value as int')
-
+    main_menu_input = input('Choice: ')
+    
+    
+    is_exit = False
     while is_exit == False:
         if main_menu_input == '1':
             clear()
@@ -42,8 +45,13 @@ def main():
             clear()
             reset_password()
             main()
+        else:
+            em()
+            print('Input not valid !!!')
+            print('...')
+            time.sleep(2)
         
-        return True
+        return main()
 
 def register():
     print('Registration Form')
@@ -76,7 +84,7 @@ def login():
             clear()
             print('Login Success')
             clear()
-            time.sleep(5)
+            time.sleep(2)
             import game_menu
             game_menu
         else:
