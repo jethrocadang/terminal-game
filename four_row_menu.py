@@ -26,8 +26,8 @@ def four_row_main():
         if four_row_input == '2':
             print('Highest score')
         if four_row_input == '3':
-            import game_menu
-            game_menu
+            from game_menu import homepage
+            homepage()
         else:
             
             print('Input not valid !!!')
